@@ -20,10 +20,10 @@ function App() {
     if (e.key === "Enter") {
       axios(apiurl + "&query=" + state.query).then(( {data} ) => {
         console.log(data); //données ok dans data
-        let result = data;
+        let result = data.results;
 
         setState(prevState => {
-          console.log(result); // resultat undefined
+          console.log({result}); 
           return { ...prevState, results:result }
          
         })
@@ -47,7 +47,7 @@ function App() {
         <h1>test</h1>
        </header>
        <main>
-         <Search handleInput={handleInput} search={search} />
+         <Search handleInput={handleInput} search={search}/>
          <Results results={state.results}/>
        </main>
     </div>
@@ -56,3 +56,6 @@ function App() {
 }
 
 export default App
+
+
+
