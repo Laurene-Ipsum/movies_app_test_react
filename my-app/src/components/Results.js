@@ -2,7 +2,7 @@ import React from 'react'
 import Result from './Result'
 
 function Results ({ results }) {
-    console.log("test" + results);
+    // console.log("test" + results);
     return (
         <section className="results" >
             { results.map(result => (

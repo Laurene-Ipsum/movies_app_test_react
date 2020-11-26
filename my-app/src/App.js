@@ -13,23 +13,24 @@ function App() {
     selected: {}
     
   });
-  const apiurl = "https://api.themoviedb.org/3/search/movie?api_key=92b418e837b833be308bbfb1fb2aca1e&query=spider";
-  
+  const apiurl = "https://api.themoviedb.org/3/search/movie?api_key=92b418e837b833be308bbfb1fb2aca1e&query=spider&language=en-US&append_to_response=images&include_image_language=en,null";
+  // const apiimgUrl= "http://image.tmdb.org/t/p/w185"
 
   const search = (e) => {
     if (e.key === "Enter") {
       axios(apiurl + "&query=" + state.query).then(( {data} ) => {
-        console.log(data); //données ok dans data
+       
         let result = data.results;
 
         setState(prevState => {
-          console.log({result}); 
+         
           return { ...prevState, results:result }
          
         })
       });
     }
   }
+
 
   const handleInput = (e) => {
      let query = e.target.value;
