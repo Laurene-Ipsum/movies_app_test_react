@@ -5,16 +5,17 @@ import Search from './components/Search'
 import Results from './components/Results'
 
 
+import CarouselComponent from "./components/carousel.component";
+
 
 function App() {
   const [state, setState] = useState({
     query: "",
     results: [],
     selected: {}
-    
   });
+
   const apiurl = "https://api.themoviedb.org/3/search/movie?api_key=92b418e837b833be308bbfb1fb2aca1e&query=spider&language=en-US&append_to_response=images&include_image_language=en,null";
-  // const apiimgUrl= "http://image.tmdb.org/t/p/w185"
 
   const search = (e) => {
     if (e.key === "Enter") {
@@ -31,7 +32,6 @@ function App() {
     }
   }
 
-
   const handleInput = (e) => {
      let query = e.target.value;
       
@@ -45,12 +45,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>test</h1>
+        <h1>🍿 Mais quel film voir ce soir ? 🍿</h1>
+        <h2>Épineuse question ! Et si on regardait :</h2>
+        <h2 className="suggestion"> </h2>
+  
        </header>
-       <main>
-         <Search handleInput={handleInput} search={search}/>
-         <Results results={state.results}/>
-       </main>
+       
+       <main onload="test()">
+           <Search handleInput={handleInput} search={search}/>
+           <Results results={state.results}/>
+           <CarouselComponent />       
+       </main>    
     </div>
   );
   

@@ -1,20 +1,3 @@
-// import React from 'react'
-
-// function Search ({ handleInput, search }) {
-//     return (
-//             <section className="searchbox-wrap">
-//                 <input 
-//                  type="text"
-//                  placeholder="Alors, une idée de film?"  
-//                  className="searchbox" 
-//                  onChange={handleInput}
-//                  onKeyPress={search}
-//                  />
-//                 </section>
-//     )
-// }
-
-// export default Search
 import React from 'react'
 
 function Search ({ handleInput, search }) {
@@ -22,7 +5,7 @@ function Search ({ handleInput, search }) {
 		<section className="searchbox-wrap">
 			<input 
 				type="text" 
-				placeholder="Search for a movie..." 
+				placeholder="Entre un mot ou un nom de film pour l'afficher :)" 
 				className="searchbox" 
 				onChange={handleInput}
 				onKeyPress={search}
@@ -30,6 +13,5 @@ function Search ({ handleInput, search }) {
 		</section>
 	)
 }
-
 
 export default Search
